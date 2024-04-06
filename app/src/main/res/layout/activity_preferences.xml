@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/preferences_gradient"
+    tools:context=".activities.PreferencesActivity">
+
+    <Button
+        android:id="@+id/savepreferences_button"
+        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Secondary"
+        android:layout_width="255dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="136dp"
+        android:backgroundTint="@color/button_color"
+        android:fontFamily="@font/adamina"
+        android:onClick="saveClick"
+        android:text="Save"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <ToggleButton
+        android:id="@+id/science_button"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/preferences_togglebutton_off"
+        android:fontFamily="@font/adamina"
+        android:onClick="preferencesClick"
+        android:text="Science"
+        android:textColor="#FFFFFF"
+        android:textOff="Science"
+        android:textOn="Science"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/business_button"
+        app:layout_constraintTop_toTopOf="@+id/business_button" />
+
+    <ToggleButton
+        android:id="@+id/sports_button"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/preferences_togglebutton_off"
+        android:fontFamily="@font/adamina"
+        android:onClick="preferencesClick"
+        android:text="Sports"
+        android:textColor="#FFFFFF"
+        android:textOff="Sports"
+        android:textOn="Sports"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/science_button"
+        app:layout_constraintTop_toTopOf="@+id/entertainment_button" />
+
+    <ToggleButton
+        android:id="@+id/technology_button"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:background="@drawable/preferences_togglebutton_off"
+        android:fontFamily="@font/adamina"
+        android:onClick="preferencesClick"
+        android:text="Technology"
+        android:textColor="#FFFFFF"
+        android:textOff="Technology"
+        android:textOn="Technology"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/sports_button"
+        app:layout_constraintTop_toTopOf="@+id/health_button" />
+
+    <ToggleButton
+        android:id="@+id/business_button"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/preferences_togglebutton_off"
+        android:fontFamily="@font/adamina"
+        android:onClick="preferencesClick"
+        android:text="Business"
+        android:textColor="#FFFFFF"
+        android:textOff="Business"
+        android:textOn="Business"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/entertainment_button"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/preferences_togglebutton_off"
+        android:fontFamily="@font/adamina"
+        android:onClick="preferencesClick"
+        android:text="Entertainment"
+        android:textColor="#FFFFFF"
+        android:textOff="Entertainment"
+        android:textOn="Entertainment"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/business_button"
+        app:layout_constraintTop_toBottomOf="@+id/business_button" />
+
+    <ToggleButton
+        android:id="@+id/health_button"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/preferences_togglebutton_off"
+        android:fontFamily="@font/adamina"
+        android:onClick="preferencesClick"
+        android:text="Health"
+        android:textColor="#FFFFFF"
+        android:textOff="Health"
+        android:textOn="Health"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/entertainment_button"
+        app:layout_constraintTop_toBottomOf="@+id/entertainment_button" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/adamina"
+        android:text="Select your preferences"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

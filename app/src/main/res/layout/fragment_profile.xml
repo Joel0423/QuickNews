@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profile_scrollview"
+    android:fillViewport="true">
+    <FrameLayout
+        android:id="@+id/profile_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.ProfileFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#D9EABD">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:background="@drawable/top_bar"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/changeemail_button"
+                style="@style/Widget.Material3.ExtendedFloatingActionButton.Secondary"
+                android:layout_width="165dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="52dp"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/adamina"
+                android:text="Verify/Change Email"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.065"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phone_textview" />
+
+            <Button
+                android:id="@+id/changephone_button"
+                style="@style/Widget.Material3.ExtendedFloatingActionButton.Secondary"
+                android:layout_width="165dp"
+                android:layout_height="65dp"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/adamina"
+                android:text="Change Phone"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.935"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/changeemail_button" />
+
+            <Button
+                android:id="@+id/resetpassword_button"
+                style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Secondary"
+                android:layout_width="165dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/adamina"
+                android:text="Reset Password"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.065"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changeemail_button" />
+
+            <Button
+                android:id="@+id/setpreferences_button"
+                style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Secondary"
+                android:layout_width="165dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/adamina"
+                android:text="Set Preferences"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.935"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changephone_button" />
+
+            <Button
+                android:id="@+id/logout_button"
+                style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Secondary"
+                android:layout_width="214dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/adamina"
+                android:text="Log Out"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/resetpassword_button" />
+
+            <Button
+                android:id="@+id/deleteaccount_button"
+                style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Secondary"
+                android:layout_width="265dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/ic_launcher_background"
+                android:fontFamily="@font/adamina"
+                android:text="Delete Account"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logout_button" />
+
+            <TextView
+                android:id="@+id/email_textview"
+                android:layout_width="330dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/profile_textview"
+                android:text="Email"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/username_textview" />
+
+            <TextView
+                android:id="@+id/username_textview"
+                android:layout_width="330dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/profile_textview"
+                android:text="Username"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <TextView
+                android:id="@+id/phone_textview"
+                android:layout_width="330dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/profile_textview"
+                android:text="Phone"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_textview" />
+
+            <TextView
+                android:id="@+id/toolbar_textview"
+                android:layout_width="142dp"
+                android:layout_height="56dp"
+                android:background="@drawable/textview_background"
+                android:fontFamily="@font/adamina"
+                android:gravity="center"
+                android:letterSpacing="0.08"
+                android:text="Profile"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</ScrollView>

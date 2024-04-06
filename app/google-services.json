@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "439366633546",
+    "project_id": "quicknews-a6960",
+    "storage_bucket": "quicknews-a6960.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439366633546:android:607a09f96a9aba47c6beb3",
+        "android_client_info": {
+          "package_name": "com.joela.quicknews"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfE_BdmK2BJILu2iY9cJm2uo0pK3rT3lI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

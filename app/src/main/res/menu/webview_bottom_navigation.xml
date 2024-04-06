@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/openbrowser_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="false"
+        android:checked="false"
+        android:icon="@drawable/open_browser"
+        android:onClick="navigationAction"
+        android:title="Open Browser" />
+    <item
+        android:id="@+id/copy_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="false"
+        android:checked="false"
+        android:icon="@drawable/copy_link"
+        android:onClick="navigationAction"
+        android:title="Copy Link" />
+    <item
+        android:id="@+id/close_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="false"
+        android:checked="false"
+        android:icon="@drawable/close_webview"
+        android:onClick="navigationAction"
+        android:title="Close" />
+</menu>
