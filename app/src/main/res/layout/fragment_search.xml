@@ -20,6 +20,7 @@
             android:layout_height="124dp"
             android:indeterminateBehavior="repeat"
             android:indeterminateTint="#A924C6"
+            android:tag="progressBar"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

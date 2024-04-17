@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="news_categories">
-        <item>Test</item>
         <item>Preferences</item>
         <item>Health</item>
         <item>Sports</item>

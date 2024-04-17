@@ -63,6 +63,7 @@
             android:layout_height="124dp"
             android:indeterminateBehavior="repeat"
             android:indeterminateTint="#134EB5"
+            android:tag="progressBar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

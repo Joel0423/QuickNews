@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -63,6 +64,7 @@ class RecycleViewAdaptor(NewsCardList: ArrayList<Article>, favFrag: Boolean = fa
 
         holder.news_source.setText(NewsCardList.get(position).source.name)
         holder.news_date.setText(NewsCardList.get(position).publishedAt.substring(0,10))
+        holder.news_image.setImageBitmap(holder.itemView.context.getDrawable(R.drawable.loading_image)!!.toBitmap())
 
         /*
         reference to main thread

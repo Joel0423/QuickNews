@@ -4,7 +4,10 @@ Fragment that allows Users to search for News Articles
 
 package com.joela.quicknews.fragments
 
+import android.content.Context
 import android.graphics.Color
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -14,7 +17,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.postDelayed
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -62,7 +64,13 @@ class SearchFragment : Fragment() {
         //Search Button is clicked, function to get news is called
         binding.searchImagebutton.setOnClickListener({
             binding.searchImagebutton.background.setTint(Color.parseColor("#979797"))
-            getNews()
+            if (!isInternetAvailable()) {
+                internetToast("No internet connection")
+            }
+            else
+            {
+                getNews()
+            }
             Handler().postDelayed({
                 binding.searchImagebutton.background.setTintList(null)
             },220)
@@ -71,9 +79,15 @@ class SearchFragment : Fragment() {
         //Search box is checked if enter key is pressed
         binding.searchEdittext.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
-                //get news if enter is pressed
-                getNews()
-                return@OnKeyListener true
+
+                if (!isInternetAvailable()) {
+                    internetToast("No internet connection")
+                }
+                else
+                {//get news if enter is pressed
+                    getNews()
+                    return@OnKeyListener true
+                }
             }
             false
         })
@@ -134,5 +148,19 @@ class SearchFragment : Fragment() {
         else{
             Toast.makeText(activity, "Enter query to search", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    //returns true or false if the internet is available or not
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager = activity?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork
+        val networkCapabilities = connectivityManager.getNetworkCapabilities(network)
+        return networkCapabilities != null &&
+                (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                        networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))
+    }
+
+    private fun internetToast(message: String) {
+        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
 }

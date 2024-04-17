@@ -5,6 +5,11 @@ User can select drop down box to select categories
 
 package com.joela.quicknews.fragments
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -14,6 +19,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
+import androidx.core.content.getSystemService
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -93,6 +99,7 @@ class NewsFragment : Fragment() {
 
         //get the news when the drop down box is selected
         binding.newscategoriesSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Toast.makeText(activity, "No item selected on spinner", Toast.LENGTH_SHORT).show()
                 Log.w("News Fragment", "Nothing Selected")
@@ -100,6 +107,10 @@ class NewsFragment : Fragment() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 getNews()
+
+                if (!isInternetAvailable()) {
+                    InternetToast("No internet connection")
+                }
             }
         }
         return view
@@ -226,5 +237,19 @@ class NewsFragment : Fragment() {
                 Log.e("News Fragment", "Bad Response: "+t.message)
             }
         })
+    }
+
+    //returns true or false if the internet is available or not
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager = activity?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork
+        val networkCapabilities = connectivityManager.getNetworkCapabilities(network)
+        return networkCapabilities != null &&
+                (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                        networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))
+    }
+
+    private fun InternetToast(message: String) {
+        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
 }
